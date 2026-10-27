@@ -1,8 +1,7 @@
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
 
-from app.features.extractor.router import router as extractor_router
-from app.features.parser.router import router as parser_router
+from app.features.processor.router import router as processor_router
 
 from app.features.score.similarity_scorer import SimilarityScorer
 
@@ -21,8 +20,7 @@ app = FastAPI(
     version="0.1.0",
 )
 
-app.include_router(parser_router)
-app.include_router(extractor_router)
+app.include_router(processor_router)
 
 @app.get("/health", tags=["Health"])
 def health_check() -> dict[str, str]:

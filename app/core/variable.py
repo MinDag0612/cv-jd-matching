@@ -41,3 +41,12 @@ class Prompt(str, Enum):
     - SCAN THE ENTIRE RESUME FROM TOP TO BOTTOM, ensuring no section (especially Certifications/Licenses) is skipped.
     - Keep each distinct project as ONE complete text block in the project array, do not split project details into multiple list items.
     """
+    
+    PROMPT_MATCH_EVALUATION = """
+    Evaluate alignment between the candidate's CV feature and the JD requirement.
+
+    Rules:
+    - Strictly compare explicit facts without assumption.
+    - The 'reason' must logically lead to the 'prefix'. 
+    - Assign 'Not Matched' if the qualifications, skills, or domains completely differ or are missing.
+    """

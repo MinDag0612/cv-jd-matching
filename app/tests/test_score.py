@@ -1,5 +1,5 @@
 from app.features.score.similarity_scorer import SimilarityScorer
-from app.features.score.match_feature import MatchFeature
+from app.models.match_feature import MatchFeature
 
 
 def main() -> None:
