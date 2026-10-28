@@ -1,8 +1,8 @@
-from app.features.extractor.ollama_model import OLLAMAModel
+from app.features.extraction.ollama_model import OllamaModel
 from app.models.infor_extracted import InforExtractedResume, InforExtractedJD
 
 
-def test_resume(model: OLLAMAModel):
+def test_resume(model: OllamaModel):
     resume_text = """
     Nguyen Van An
     Backend Developer
@@ -44,7 +44,7 @@ def test_resume(model: OLLAMAModel):
     print(result.model_dump_json(indent=2))
 
 
-def test_jd(model: OLLAMAModel):
+def test_jd(model: OllamaModel):
     jd_text = """
     Job Title: Python Backend Developer
 
@@ -78,7 +78,7 @@ def test_jd(model: OLLAMAModel):
 
 
 if __name__ == "__main__":
-    model = OLLAMAModel()
+    model = OllamaModel()
 
     try:
         test_resume(model)

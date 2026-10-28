@@ -1,9 +1,9 @@
-from app.features.commender.commender import Commender
+from app.features.recommendation.service import RecommendationService
 from app.models.match_feature import MatchFeature
 
 
 def main() -> None:
-    commender = Commender()
+    recommender = RecommendationService()
 
     match_feature = MatchFeature(
         feature_type="skill",
@@ -11,7 +11,7 @@ def main() -> None:
         jd_text="Experience building backend services with Python.",
     )
 
-    response = commender.commend(match_feature)
+    response = recommender.recommend(match_feature)
 
     print("LLM response:")
     print(response)

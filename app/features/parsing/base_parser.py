@@ -5,7 +5,7 @@ from docx import Document
 from pypdf import PdfReader
 
 
-class Parser(ABC):
+class BaseParser(ABC):
     @abstractmethod
     def parse(file: UploadFile) -> str:
         pass

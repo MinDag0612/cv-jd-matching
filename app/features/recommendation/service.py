@@ -4,11 +4,11 @@ import httpx
 
 from app.core.config import settings
 from app.core.variable import LLMModel, Prompt
-from app.features.commender.schema import CommendResponse
+from app.models.infor_commend import CommendResponse
 from app.models.match_feature import MatchFeature
 
 
-class Commender:
+class RecommendationService:
     def __init__(self):
         self.client = httpx.Client(
             base_url=settings.ollama_base_url,
@@ -62,7 +62,7 @@ class Commender:
 
         raise RuntimeError("Ollama request failed")
 
-    def commend(self, match_feature: MatchFeature) -> CommendResponse:
+    def recommend(self, match_feature: MatchFeature) -> CommendResponse:
         prompt = Prompt.PROMPT_MATCH_EVALUATION
 
         response_text = self.generate_with_retry(

@@ -1,9 +1,9 @@
-from app.features.parser.parser import Parser
+from app.features.parsing.base_parser import BaseParser
 from fastapi import UploadFile
 from io import BytesIO
 from docx import Document
 
-class DOCXParser(Parser):
+class DOCXParser(BaseParser):
     @staticmethod
     def parse(file: UploadFile) -> str:
         content = file.file.read()

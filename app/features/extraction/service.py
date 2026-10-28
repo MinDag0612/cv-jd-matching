@@ -1,8 +1,8 @@
-from app.features.extractor.ollama_model import OLLAMAModel
+from app.features.extraction.ollama_model import OllamaModel
 
 
 def extract_information(text: str, is_resume: bool) -> dict:
-    model = OLLAMAModel()
+    model = OllamaModel()
     try:
         result = model.extract(parsed_text=text, is_resume=is_resume)
         return result.model_dump()

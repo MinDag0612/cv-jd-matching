@@ -1,6 +1,6 @@
 from fastapi import HTTPException, UploadFile
 
-from app.features.parser.parser_factory import ParserFactory
+from app.features.parsing.factory import ParserFactory
 
 
 def parse_uploaded_file(file: UploadFile) -> str:

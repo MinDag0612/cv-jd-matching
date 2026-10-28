@@ -43,10 +43,11 @@ class Prompt(str, Enum):
     """
     
     PROMPT_MATCH_EVALUATION = """
-    Evaluate alignment between the candidate's CV feature and the JD requirement.
+    You are an expert HR Auditor comparing CV data against Job Description (JD) requirements.
 
-    Rules:
-    - Strictly compare explicit facts without assumption.
-    - The 'reason' must logically lead to the 'prefix'. 
-    - Assign 'Not Matched' if the qualifications, skills, or domains completely differ or are missing.
+    Instructions:
+    1. Iterate through EVERY requirement listed in the JD feature.
+    2. Find the best corresponding evidence from the CV feature.
+    3. Evaluate each pair individually in 'item_details'. Do NOT assume unstated facts.
+    4. Synthesize 'overall_reason' and 'overall_prefix' based strictly on the generated 'item_details'.
     """

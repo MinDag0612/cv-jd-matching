@@ -1,5 +1,5 @@
 from app.models.infor_extracted import InforExtractedBase
-from app.features.extractor.model import Model
+from app.features.extraction.base_model import BaseExtractionModel
 from app.core.variable import LLMModel, Prompt
 from app.models.infor_extracted import InforExtractedBase, InforExtractedJD, InforExtractedResume
 
@@ -11,7 +11,7 @@ import time
 
 load_dotenv()
 
-class GEMINIModel(Model):
+class GeminiModel(BaseExtractionModel):
     def __init__(self):
         self.client = genai.Client(
             api_key=os.getenv("GEMINI_API_KEY")
@@ -76,4 +76,3 @@ class GEMINIModel(Model):
             raise ValueError("Failed to extract information")
 
         return schema.model_validate_json(response.text)
-

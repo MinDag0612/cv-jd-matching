@@ -1,13 +1,13 @@
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
 
-from app.features.processor.router import router as processor_router
+from app.routers.processor.router import router as processor_router
 
-from app.features.score.similarity_scorer import SimilarityScorer
+from app.features.scoring.service import ScoringService
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    app.state.similarity_scorer = SimilarityScorer()
+    app.state.similarity_scorer = ScoringService()
     yield
     app.state.similarity_scorer = None
 

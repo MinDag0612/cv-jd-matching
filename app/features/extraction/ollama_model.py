@@ -4,7 +4,7 @@ import time
 import httpx
 
 from app.models.infor_extracted import InforExtractedBase
-from app.features.extractor.model import Model
+from app.features.extraction.base_model import BaseExtractionModel
 from app.core.variable import LLMModel, Prompt
 from app.models.infor_extracted import (
     InforExtractedBase,
@@ -13,7 +13,7 @@ from app.models.infor_extracted import (
 )
 from app.core.config import settings
 
-class OLLAMAModel(Model):
+class OllamaModel(BaseExtractionModel):
     def __init__(self):
         self.client = httpx.Client(
             base_url=settings.ollama_base_url,

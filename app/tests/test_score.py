@@ -1,9 +1,9 @@
-from app.features.score.similarity_scorer import SimilarityScorer
+from app.features.scoring.service import ScoringService
 from app.models.match_feature import MatchFeature
 
 
 def main() -> None:
-    scorer = SimilarityScorer()
+    scorer = ScoringService()
 
     match_feature = MatchFeature(
         feature_type="skill",

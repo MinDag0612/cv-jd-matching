@@ -1,9 +1,7 @@
 from typing import Any
-
 from pydantic import BaseModel
 
-from app.features.commender.schema import CommendResponse
-
+from app.models.infor_commend import CommendResponse
 
 class ProcessorFileResponse(BaseModel):
     filename: str | None

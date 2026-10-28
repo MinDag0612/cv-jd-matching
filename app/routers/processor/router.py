@@ -1,10 +1,10 @@
 from fastapi import APIRouter, File, Form, UploadFile
 
-from app.features.processor.processor import Processor
-from app.features.processor.schema import ProcessorFileResponse
+from app.features.processing.service import ProcessingService
+from app.models.infor_process import ProcessorFileResponse
 
 router = APIRouter(prefix="/extractor", tags=["Processor"])
-processor = Processor()
+processor = ProcessingService()
 
 
 @router.post("/extract")

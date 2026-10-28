@@ -1,9 +1,9 @@
-from app.features.processor.processor import Processor
+from app.features.processing.service import ProcessingService
 from app.models.infor_extracted import InforExtractedJD, InforExtractedResume
 
 
 def main() -> None:
-    processor = Processor()
+    processor = ProcessingService()
 
     cv_data = InforExtractedResume(
         skill=[

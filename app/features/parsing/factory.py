@@ -3,8 +3,8 @@ from pathlib import Path
 from fastapi import UploadFile
 from typing import Callable
 
-from app.features.parser.docx_parser import DOCXParser
-from app.features.parser.pdf_parser import PDFParser
+from app.features.parsing.docx_parser import DOCXParser
+from app.features.parsing.pdf_parser import PDFParser
 
 class ParserFactory:
     @staticmethod
