@@ -1,9 +1,15 @@
 from app.features.processing.service import ProcessingService
 from app.models.infor_extracted import InforExtractedJD, InforExtractedResume
+from app.features.scoring.service import ScoringService
+from app.features.pairing.service import PairingService
+
 
 
 def main() -> None:
-    processor = ProcessingService()
+    processor = ProcessingService(
+        scoring = ScoringService(),
+        pairing = PairingService()
+    )
 
     cv_data = InforExtractedResume(
         skill=[

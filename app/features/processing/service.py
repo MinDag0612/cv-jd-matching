@@ -36,9 +36,13 @@ from app.features.pairing.service import PairingService
 
 
 class ProcessingService:
-    def __init__(self) -> None:
-        self._scorer: ScoringService | None = None # Truyền score vào ở API
-        self.pairer = PairingService()
+    def __init__(
+        self,
+        scoring: ScoringService,
+        pairing: PairingService
+    ) -> None:
+        self._scorer: ScoringService = scoring
+        self._pairer: PairingService = pairing
 
     def process_text(self, text: str, is_resume: bool = False) -> dict:
         return extract_information(text, is_resume)
@@ -57,7 +61,7 @@ class ProcessingService:
         cv_data: InforExtractedResume,
         jd_data: InforExtractedJD,
     ) -> ResultCompareResponse:
-        match_features = self.pairer.match_features(cv_data, jd_data)
+        match_features = self._pairer.match_features(cv_data, jd_data)
 
         if self._scorer is None:
             self._scorer = ScoringService()
