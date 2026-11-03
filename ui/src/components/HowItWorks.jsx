@@ -36,8 +36,7 @@ export default function HowItWorks() {
           ))}
         </div>
         <p className="process-note">
-          Đây là trang giới thiệu. Luồng tải hồ sơ và xem kết quả sẽ được bổ sung
-          ở bước tiếp theo.
+          Bạn có thể bắt đầu đối chiếu hồ sơ ngay từ nút Khám phá ở đầu trang.
         </p>
       </div>
     </section>

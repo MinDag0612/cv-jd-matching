@@ -29,6 +29,11 @@ dist/
 .DS_Store
 Thumbs.db
 
+# UI build artifacts
+ui/node_modules/
+ui/dist/
+ui/.vite/
+
 
 # Python cache
 __pycache__/

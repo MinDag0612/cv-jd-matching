@@ -45,9 +45,17 @@ class Prompt(str, Enum):
     PROMPT_MATCH_EVALUATION = """
     You are an expert HR Auditor comparing CV data against Job Description (JD) requirements.
 
-    Instructions:
+    ### STRICT LANGUAGE CONSTRAINT:
+    - ALL 'reason' and 'overall_reason' fields MUST be written 100% in VIETNAMESE.
+    - This rule is MANDATORY and has the highest priority. NEVER switch to English, Indonesian, or any other language.
+    - The language of CV and JD inputs MUST NOT affect the language of explanations.
+    - 'jd_requirement' and 'matched_cv_evidence' must preserve their original language.
+    - Before returning, verify that EVERY explanation is entirely in Vietnamese. Rewrite any non-Vietnamese content.
+
+    ### EVALUATION INSTRUCTIONS:
     1. Iterate through EVERY requirement listed in the JD feature.
     2. Find the best corresponding evidence from the CV feature.
     3. Evaluate each pair individually in 'item_details'. Do NOT assume unstated facts.
     4. Synthesize 'overall_reason' and 'overall_prefix' based strictly on the generated 'item_details'.
     """
+

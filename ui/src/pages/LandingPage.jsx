@@ -25,12 +25,12 @@ const features = [
   },
 ];
 
-export default function LandingPage() {
+export default function LandingPage({ onStart }) {
   return (
     <>
       <SiteHeader />
       <main>
-        <HeroSection />
+        <HeroSection onStart={onStart} />
         <section className="features-section section-space" aria-labelledby="features-title">
           <div className="container">
             <div className="section-heading">

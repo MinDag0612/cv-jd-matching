@@ -1,4 +1,4 @@
-export default function HeroSection() {
+export default function HeroSection({ onStart }) {
   return (
     <section className="hero-section">
       <div className="container">
@@ -14,9 +14,9 @@ export default function HeroSection() {
               Đối chiếu hồ sơ ứng viên với yêu cầu công việc một cách rõ ràng,
               để mỗi quyết định tuyển dụng bắt đầu bằng thông tin hữu ích.
             </p>
-            <a className="btn btn-ink" href="#quy-trinh">
-              Khám phá cách hoạt động
-            </a>
+            <button className="btn btn-ink" type="button" onClick={onStart}>
+              Khám phá
+            </button>
             <p className="hero-note">Ít phỏng đoán hơn. Nhiều góc nhìn hơn.</p>
           </div>
           <div className="col-lg-6">

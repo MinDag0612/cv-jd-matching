@@ -37,7 +37,18 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - .:/app
+      - ./app:/app/app
+    restart: unless-stopped
+
+  ui:
+    build:
+      context: ./ui
+      dockerfile: Dockerfile
+    depends_on:
+      api:
+        condition: service_started
+    ports:
+      - "8080:80"
     restart: unless-stopped
 
 volumes:
