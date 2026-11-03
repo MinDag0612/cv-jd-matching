@@ -6,8 +6,7 @@ information, then view a match score and feedback for each requirement group.
 
 ## Demo
 
-> **Demo video:** _Add a link or embed the demo video here._
-
+> **Demo video:** https://youtu.be/Jba0XsluqS0
 ## Features
 
 - Read CVs and JDs from PDF or DOCX files.
