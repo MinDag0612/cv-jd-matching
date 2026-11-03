@@ -1,6 +1,6 @@
 # CV x JD Matching
 
-An application that helps compare a candidate's resume (CV) with a job
+A full-stack CV-JD matching platform powered by FastAPI, Sentence Transformers, and local LLM inference. An application that helps compare a candidate's resume (CV) with a job
 description (JD). Users can upload PDF or DOCX documents, extract and edit their
 information, then view a match score and feedback for each requirement group.
 
@@ -218,9 +218,6 @@ the API, and port 11435 points to Ollama. Services communicate with each other
 by their service names on the Docker network; for example, the API uses
 `http://ollama:11434`.
 
-Compose does not currently start PostgreSQL. The `db_data` volume is still
-declared in the Compose file, but no service currently uses it.
-
 ## Directory structure
 
 ```text
@@ -266,12 +263,3 @@ to be downloaded:
 ```powershell
 uv run python app/tests/test.py
 ```
-
-## Notes
-
-- Documents are extracted and sent to an AI model for processing; only use CVs
-  and JDs that you are authorized to provide.
-- The API currently accepts PDF and DOCX documents. Extraction quality depends
-  on the format, text quality, and model being used.
-- Extraction and comparison requests may take several minutes, especially
-  during the first model run or on machines without a GPU.
